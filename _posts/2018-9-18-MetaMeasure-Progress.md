@@ -23,6 +23,7 @@ For example, `auto vel = 50.0_m/1.0_s;` will result in a measurement that has a 
 By treating units like variables in a math equation, and allowing them to be divided or multiplied, you're doing dimensional analysis.
 
 And if you wanted to figure out how far you'd travel in a certain amount of time at that speed? `auto dist = vel*5.0_s;`
+
 What if you want it in miles for some reason? Easy: `MetaMeasure::Miles<> dist = vel*5.0_s;` 
 
 # Why?
