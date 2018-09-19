@@ -1,7 +1,7 @@
 ----
 layout: post
-title:  "MetaMeasure — Progress"
-date:   2018-09-18 08:20:00 -0600
+title: "MetaMeasure — Progress"
+date: 2018-09-18 08:20:00 -0600
 categories: learning
 tags:
 - C++
