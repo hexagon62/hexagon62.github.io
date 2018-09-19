@@ -11,10 +11,17 @@ tags:
 # What is this project?
 
 MetaMeasure is a header-only library that provides the ability to do dimensional analysis at compile time.
-What do I mean when I say this? Simple: imagine if, instead of plain numbers, you could use actual units in your code, like kilometers, or seconds. MetaMeasure implements this ability.
-Additionally, measurements in kilometers or seconds are not interchangable. So you can't do something like `MetaMeasure::Seconds<> time = 1.0_km;`.
-However, you can divide and multiply measurements! For example, `auto vel = 50.0_m/1.0_s;` will result in a measurement that has a value of 50, but knows it's in meters per second.
+What do I mean when I say this? Simple: imagine if, instead of plain numbers, you could use actual units in your code, like kilometers, or seconds.
+MetaMeasure implements this!
+
+Additionally, measurements in kilometers or seconds are not interchangable.
+So you can't do something like `MetaMeasure::Seconds<> time = 1.0_km;`.
+
+However, you can divide and multiply measurements!
+
+For example, `auto vel = 50.0_m/1.0_s;` will result in a measurement that has a value of 50, but knows it's in meters per second.
 By treating units like variables in a math equation, and allowing them to be divided or multiplied, you're doing dimensional analysis.
+
 And if you wanted to figure out how far you'd travel in a certain amount of time at that speed? `auto dist = vel*5.0_s;`
 What if you want it in miles for some reason? Easy: `MetaMeasure::Miles<> dist = vel*5.0_s;` 
 
