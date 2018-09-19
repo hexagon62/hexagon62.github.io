@@ -72,7 +72,8 @@ public:
 };
 
 template<typename Tuple, typename Tuple2>
-using MultiplyDimensions = RemoveZeroDimensions<
+using MultiplyDimensions = RemoveZeroDimensions
+<
   typename MultiplyDimensions_
   <
     LargerTuple<Tuple, Tuple2>,
