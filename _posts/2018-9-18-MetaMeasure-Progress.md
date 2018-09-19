@@ -24,7 +24,9 @@ By treating units like variables in a math equation, and allowing them to be div
 
 And if you wanted to figure out how far you'd travel in a certain amount of time at that speed? `auto dist = vel*5.0_s;`
 
-What if you want it in miles for some reason? Easy: `MetaMeasure::Miles<> dist = vel*5.0_s;` 
+What if you want it in miles for some reason?
+
+Easy: `MetaMeasure::Miles<> dist = vel*5.0_s;` 
 
 # Why?
 
