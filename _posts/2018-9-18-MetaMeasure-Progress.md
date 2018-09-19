@@ -118,7 +118,7 @@ What I want to add:
 * More concise namespacing (instead of a namespace for just metric stuff, perhaps namespace by type of unit as well)
 * Documentation, so that people can actually use this if they want to
 
-After I've got that, I think I'll be done with this. Who knows though, maybe I'll think of more stuff to add.
+I consider the project pretty much complete, save for the documentation, but the rest should be easy to do.
 
 # Want to check MetaMeasure out?
 
