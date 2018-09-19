@@ -85,10 +85,14 @@ using MultiplyDimensions = RemoveZeroDimensions
 {% endhighlight %}
 
 The above is the metafunction I use to multiply the units of a measurement.
-If a measurement is in meters per second, and I multiply it by seconds, then that should evaluate to a measurement in just meters.
-If a measurement is in meters per second squared, and I multiply that by seconds, then that should evaluate to a mmeasurement in meters per second.
+
+If a measurement is in meters per second, and I multiply it by seconds, then that should evaluate to a measurement in just meters. The type should not even ever know seconds were involved in the end (hence the `RemoveZeroDimensions` metafunction, which removes seconds from the measurement in this case).
+
+If a measurement is in meters per second squared, and I multiply that by seconds, then that should evaluate to a measurement in meters per second.
+
 If a measurement is in meters, and I multiply it by millimeters, then that should evaluate to meters squared, but handle the conversion from millimeters to meters.
-This metafunction, and the `operator*` overloads of `MetaMeasure::Measurement` handle this.
+
+This metafunction, and the `operator*` overloads of `MetaMeasure::Measurement` handle the above cases.
 
 Actually fully implementing multiplication and division (ontop the other metafunctions they use) took hundreds of lines of the same kind of recursive stuff.
 Hopefully I can find better ways to do this kind of stuff! In the mean time though, this is the best I can do.
