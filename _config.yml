@@ -84,5 +84,5 @@ exclude:
   - LICENSE
   - README.md
   - CNAME
-
-future: true
+  
+theme: jekyll-theme-hacker
