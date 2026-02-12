@@ -1,0 +1,63 @@
+body {
+    height: 100%;
+    margin: 0;
+    background: #0d00ff;
+    background: linear-gradient(0deg, rgba(6, 0, 128, 1) 0%, rgba(0, 42, 90, 1) 30%, rgba(75, 0, 128, 1) 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+main {
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 16px;
+    margin: auto;
+    padding: 16px 64px 16px 64px;
+    width: 700px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 16px;
+}
+
+h1
+{
+    color: cyan;
+    text-shadow: 4px 4px 2px purple;
+}
+
+h2
+{
+    color: orchid;
+    text-shadow: 4px 4px 2px #404;
+}
+
+a
+{
+    color: lightblue;
+    text-shadow: 4px 4px 2px purple;
+}
+
+a:hover
+{
+    color: white;
+}
+
+small
+{
+    color: #777;
+    font-size: 8pt;
+}
+
+.copy
+{
+    color: #f7f;
+    font-size: 10pt;
+    text-decoration: none;
+}
+
+.copy:hover
+{
+    color: white;
+}
