@@ -137,6 +137,11 @@ small
     text-align: center;
 }
 
+.nowrap
+{
+    white-space: nowrap;
+}
+
 .imageflex
 {
     display: flex;
@@ -262,7 +267,7 @@ small
 
 @media screen and (width < 850px) {
     main {
-        min-width: 180px;
+        min-width: 304px;
         max-width: 450px;
     }
 
