@@ -104,6 +104,11 @@ small
     font-size: 9pt;
 }
 
+small > a {
+    color: rgb(115, 158, 172);
+    text-shadow: 4px 4px 2px purple;
+}
+
 .contacts > li > small::before
 {
     content: "\a";
