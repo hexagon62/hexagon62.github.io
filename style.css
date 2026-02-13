@@ -18,9 +18,8 @@ main {
     margin-bottom: 16px;
     top: 16px;
     padding: 16px 64px 32px 64px;
-    width: 800px;
-    border: 2px solid #666;
     border-radius: 16px;
+    border: 2px solid #666;
     background: linear-gradient(180deg, rgba(0, 24, 72, 0.9) 0%, rgba(48, 0, 48, 0.9) 100%);
 }
 
@@ -55,28 +54,30 @@ ul
 {
     margin-top: 8px;
     margin-bottom: 16px;
+    margin-left: 16px;
+    padding: 0;
 }
 
-ul > li
+li
 {
     display: block;
 }
 
-ul.horizontal {
-    margin: 0;
-    padding: 0;
-    margin-left: 16px;
+ul.contacts {
+    display: flex;
+    flex-flow: row wrap;
 }
 
-ul.horizontal > li {
-    width: 49%;
-    vertical-align: top;
-    display: inline-block;
+ul.contacts > li {
+    display: block;
+    flex-grow: 1;
     margin-bottom: 8px;
+    margin-left: 4px;
+    margin-right: 4px;
 }
 
-li:before {
-    content: "•";
+li::before {
+    content: "• ";
     font-size: 16pt;
 }
 
@@ -100,7 +101,13 @@ a:hover
 small
 {
     color: #999;
-    font-size: 11pt;
+    font-size: 9pt;
+}
+
+.contacts > li > small::before
+{
+    content: "\a";
+    white-space: pre;
 }
 
 .copy
@@ -108,6 +115,7 @@ small
     color: #7f7;
     font-size: 10pt;
     text-decoration: none;
+    user-select: none;
 }
 
 .copy:hover
@@ -115,25 +123,13 @@ small
     color: white;
 }
 
-.imageflex
+.notlisted
 {
-    display: flex;
-    margin-top: 16px;
-    justify-content: center;
-}
-
-.imagefleximage
-{
-    margin-left: 4px;
-    margin-right: 16px;
-    margin-top: 32px;
-    width: 160px;
-    height: 160px;
-}
-
-.imageflexcontent
-{
-    margin-top: 32px;
+    color: #f77;
+    font-size: 10pt;
+    text-decoration: none;
+    user-select: none;
+    cursor: not-allowed;
 }
 
 .center
@@ -141,13 +137,23 @@ small
     text-align: center;
 }
 
+.imageflex
+{
+    display: flex;
+    justify-content: center;
+}
+
+.imagefleximage
+{
+    width: 160px;
+    height: 160px;
+}
+
 .aboutflex
 {
     display: flex;
     flex-direction: row;
     position: relative;
-    top: -16px;
-    margin-bottom: -32px;
 }
 
 .aboutname
@@ -155,7 +161,6 @@ small
     font-size: 48pt;
     color: white;
     text-shadow: 4px 4px 2px purple;
-    rotate: 4deg;
 }
 
 .aboutname > small
@@ -165,8 +170,6 @@ small
     text-shadow: 4px 4px 2px purple;
     display: inline-block;
     position: relative;
-    top: -32px;
-    rotate: -16deg;
 }
 
 .aboutpronouns1
@@ -175,8 +178,6 @@ small
     font-size: 32pt;
     text-align: center;
     text-shadow: 4px 4px 2px purple;
-    rotate: 16deg;
-    flex-grow: 2;
 }
 
 .aboutpronouns1 > small
@@ -186,8 +187,6 @@ small
     display: inline-block;
     position: relative;
     text-align: center;
-    top: -32px;
-    rotate: -8deg;
 }
 
 .aboutpronouns2
@@ -196,8 +195,6 @@ small
     font-size: 32pt;
     text-align: center;
     text-shadow: 4px 4px 2px purple;
-    rotate: -4deg;
-    flex-grow: 2;
 }
 
 .aboutpronouns2 > small
@@ -207,18 +204,15 @@ small
     display: inline-block;
     position: relative;
     text-align: center;
-    top: -32px;
-    rotate: -6deg;
 }
 
 .aboutspecies
 {
     color: #00f;
     font-size: 32pt;
+    position: relative;
     text-align: center;
     text-shadow: 4px 4px 2px #404;
-    rotate: -24deg;
-    flex-grow: 1;
 }
 
 .aboutspecies > small
@@ -228,6 +222,226 @@ small
     display: inline-block;
     position: relative;
     text-align: center;
-    top: -32px;
-    rotate: 20deg;
+}
+
+@media screen and (width < 448px) {
+    .aboutpronouns1 > small
+    {
+        top: -16px;
+        rotate: -8deg;
+    }
+}
+
+@media screen and (width < 360px) {
+    .aboutname
+    {
+        font-size: 40pt;
+    }
+
+    .aboutname > small
+    {
+        top: -40px;
+        rotate: -6deg;
+    }
+}
+
+@media screen and (width < 371px) {
+    .aboutpronouns2 > small
+    {
+        top: -16px;
+        rotate: -6deg;
+    }
+}
+
+@media screen and (width < 600px) {
+    main {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+
+@media screen and (width < 850px) {
+    main {
+        min-width: 180px;
+        max-width: 450px;
+    }
+
+    li {
+        margin-bottom: 8px;
+    }
+
+    .contacts > li {
+        flex-basis: 100%;
+    }
+
+    .copy::before {
+        content: "\a";
+        white-space: pre;
+    }
+
+    .notlisted::before {
+        content: "\a";
+        white-space: pre;
+    }
+
+    .aboutlist > li > small::before {
+        content: "\a";
+        white-space: pre;
+        white-space-collapse: preserve;
+    }
+
+    .imageflex
+    {
+        margin-top: 16px;
+        flex-direction: column;
+    }
+
+    .imagefleximage
+    {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 32px;
+    }
+
+    .aboutname
+    {
+        rotate: 4deg;
+        text-align: center;
+        display: block;
+    }
+
+    .aboutflex
+    {
+        top: -64px;
+        margin-bottom: -72px;
+    }
+
+    .aboutpronouns1
+    {
+        rotate: 16deg;
+        flex-grow: 1;
+    }
+
+    .aboutpronouns2
+    {
+        rotate: -4deg;
+        flex-grow: 1;
+    }
+
+    .aboutspecies
+    {
+        top: 0px;
+        rotate: 8deg;
+        flex-grow: 1;
+    }
+
+    .aboutspecies > small
+    {
+        top: -24px;
+        rotate: 6deg;
+    }
+}
+
+@media screen and (width < 850px) and (width >= 448px) {
+    .aboutpronouns1 > small
+    {
+        top: -32px;
+        rotate: -8deg;
+    }
+}
+
+@media screen and (width < 850px) and (width >= 360px) {
+    .aboutname > small
+    {
+        top: -48px;
+        rotate: -8deg;
+    }
+}
+
+@media screen and (width < 850px) and (width >= 371px) {
+    .aboutpronouns2 > small
+    {
+        top: -32px;
+        rotate: -6deg;
+    }
+}
+
+@media screen and (width >= 850px) {
+    main {
+        width: 700px;
+    }
+
+    .contacts > li {
+        flex-basis: 40%;
+    }
+
+    .imageflex
+    {
+        margin-top: 16px;
+    }
+
+    .imagefleximage
+    {
+        margin-left: 4px;
+        margin-right: 16px;
+        margin-top: 32px;
+    }
+
+    .imageflexcontent
+    {
+        margin-top: 32px;
+    }
+
+    .aboutflex
+    {
+        top: -16px;
+        margin-bottom: -32px;
+    }
+
+    .aboutname
+    {
+        rotate: 4deg;
+    }
+
+    .aboutname > small
+    {
+        top: -32px;
+        rotate: -16deg;
+    }
+
+    .aboutpronouns1
+    {
+        rotate: 16deg;
+        flex-grow: 1;
+    }
+
+    .aboutpronouns1 > small
+    {
+        top: -32px;
+        rotate: -8deg;
+    }
+
+    .aboutpronouns2
+    {
+        rotate: -4deg;
+        flex-grow: 1;
+    }
+
+    .aboutpronouns2 > small
+    {
+        top: -32px;
+        rotate: -6deg;
+    }
+
+    .aboutspecies
+    {
+        rotate: 24deg;
+        flex-grow: 1;
+    }
+
+    .aboutspecies > small
+    {
+        top: -32px;
+        rotate: -4deg;
+    }
 }
