@@ -279,16 +279,6 @@ small
         flex-basis: 100%;
     }
 
-    .copy::before {
-        content: "\a";
-        white-space: pre;
-    }
-
-    .notlisted::before {
-        content: "\a";
-        white-space: pre;
-    }
-
     .aboutlist > li > small::before {
         content: "\a";
         white-space: pre;
