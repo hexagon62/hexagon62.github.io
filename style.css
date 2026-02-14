@@ -99,10 +99,10 @@ li.considering::before
 }
 
 li.information::before {
-    content: "🛈 ";
+    content: "ⓘ ";
     color: #fff;
     font-size: 16px;
-    margin-right: 4px;
+    margin-right: 0px;
 }
 
 ul.contacts {
