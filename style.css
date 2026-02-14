@@ -98,6 +98,14 @@ li.considering::before
     margin-right: 4px;
 }
 
+li.abandoning::before
+{
+    content: "! ";
+    color: #f20;
+    font-size: 18px;
+    margin-right: 4px;
+}
+
 li.information::before {
     content: "ⓘ ";
     color: #fff;
