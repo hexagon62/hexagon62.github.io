@@ -69,12 +69,12 @@ ul
     padding: 0;
 }
 
-li
+ul li
 {
     display: block;
 }
 
-li.accepted::before
+ul li.accepted::before
 {
     content: "✓ ";
     color: #0f0;
@@ -82,7 +82,7 @@ li.accepted::before
     margin-right: 4px;
 }
 
-li.rejected::before
+ul li.rejected::before
 {
     content: "X ";
     color: red;
@@ -90,7 +90,7 @@ li.rejected::before
     margin-right: 4px;
 }
 
-li.considering::before
+ul li.considering::before
 {
     content: "? ";
     color: #ff0;
@@ -98,7 +98,7 @@ li.considering::before
     margin-right: 4px;
 }
 
-li.abandoning::before
+ul li.abandoning::before
 {
     content: "! ";
     color: #f20;
@@ -106,7 +106,7 @@ li.abandoning::before
     margin-right: 4px;
 }
 
-li.information::before {
+ul li.information::before {
     content: "ⓘ ";
     color: #fff;
     font-size: 16px;
@@ -126,7 +126,7 @@ ul.contacts > li {
     margin-right: 4px;
 }
 
-li::before {
+ul li::before {
     content: "• ";
     font-size: 16pt;
 }
